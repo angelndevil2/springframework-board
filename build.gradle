@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.mybatis:mybatis-spring:1.2.2")
+        classpath("org.springframework:spring-webmvc:4.2.4.RELEASE")
+        //classpath("'org.mybatis:mybatis:3.3.0'")
+    }
+}
+
+apply plugin: 'war'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+
+    compile("org.springframework:spring-webmvc:4.2.4.RELEASE")
+    //compile("'org.mybatis:mybatis:3.3.0'")
+    compile("org.mybatis:mybatis-spring:1.2.2")
+}
