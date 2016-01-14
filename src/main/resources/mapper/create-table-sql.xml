@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="setup">
+
+    <update id="create-table">
+        <![CDATA[
+            CREATE TABLE IF NOT EXIST TB_BOARD
+            (
+                IDX INT NOT NULL AUTO_INCREMENT,
+                PARENT_IDX INT,
+                TITLE VARCHAR(100) NOT NULL,
+                CONTENTS VARCHAR(4000) NOT NULL,
+                HIT_CNT INT NOT NULL,
+                DEL_FLAG BOOL DEFAULT 0 NOT NULL,
+                CREATE_DTM TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                CREATE_ID VARCHAR(30) NOT NULL,
+                PRIMARY KEY (IDX)
+            ) CHARACTER SET 'utf8' ;
+        ]]>
+    </update>
+</mapper>
